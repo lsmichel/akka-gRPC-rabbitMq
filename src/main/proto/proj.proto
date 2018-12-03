@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.lsmichel.akka.grpc.java.rabbitmq";
+option java_outer_classname = "CardManagerRunner";
+package CardManager;
+
+service CardeManager {
+	 rpc PostCard (Card) returns (CardCreateActionPerformed) {}
+}
+message Card {
+	double cardid=1;
+	string cardUserFname=2;
+	string cardUserLname=3;
+	string cardDateEtabishment=4;
+	string cardDateEpiration=5;
+	string cardLocationEtabishmen=6;
+	string cardImatriculation=7;
+	string cardNumber=8;
+	string cardUserSex=9;
+	string cardUserPhoto=10;
+	string cardUserAdress=11;
+	string cardUserPofession=12;
+	string cardUserFatherName=13;
+	string cardUserFatherBirthDate=14;
+	string cardUserMatherBirthDate=15;
+	string cardUserMatherName =16;
+	string cardUserBirthDate=17;
+	string cardUserBrithPlace=18;
+	string cardNocaisse=19;
+	
+}
+
+message CardCreateActionPerformed {
+	string errorMessage=1;
+	bool hasError= 2;
+	string message=3;
+	string numcard=4;
+}
